@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        .card {
+            background-color: #f2f2f2;
+            width: 300px;
+            border: none;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 15px;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s; 
+        }
+        
+        .card:hover {
+            transform: scale(1.05); 
+        }
+        
+        .button {
+            background-color: rgba(5, 64, 94, 0.8); 
+            color: white;
+            border: 3px solid #05405e;
+            border-radius: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .Title {
+            font-size: 36px;
+            margin-top: 50px;
+            color: #05405e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+   
+  
+</head>
+<body>
+    <h1 class="Title">Insights</h1>
+    <div class="card">
+        <h2>Recent Reviews</h2>
+        <p>See the latest Reviews posted by the users </p>
+        <button class="button" onclick="location.href='/view'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>Sensational Reviews</h2>
+        <p>The reviews which has got maximum comments & users are likely to react upon</p>
+        <button class="button" onclick="location.href='/sensational'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>sentimental Analysis</h2>
+        <p>View the most acceptable positive, negative and neutral reviews by the users</p>
+        <button class="button" onclick="location.href='/sentimental'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>Score</h2>
+        <p>Get the overall count of users who are really enjoying the game and vice versa</p>
+        <button class="button" onclick="location.href='/overallCount'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>Acceptable reviews</h2>
+        <p>See those reviews which are approved by majority of the users</p>
+        <button class="button" onclick="location.href='/mostLiked'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>Insignificant</h2>
+        <p>See the reviews which are less significant or ignored by most of the users</p>
+        <button class="button" onclick="location.href='/mostDisliked'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>feature Analysis</h2>
+        <p>figures which actually shows whether users are satisfied or not with the features</p>
+        <button class="button" onclick="location.href='/feature'">Proceed</button>
+    </div>
+    <div class="card">
+        <h2>graphics Analysis</h2>
+        <p>figures which actually shows whether users are satisfied or not with the graphics</p>
+        <button class="button" onclick="location.href='/graphics'">Proceed</button>
+    </div>
+</body>
+</html>
