@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+       
+        .review {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            background-color: #f2f2f2;
+        }
+
+        
+        .count-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(5, 64, 94, 0.8);
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+   
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+    <title>Overall Review Counts</title>
+</head>
+<body>
+    <h1>Overall Review Counts</h1>
+
+    <div class="review">
+        <div class="count-circle">{{ sentiment_counts['Very Positive'] }}</div>
+        <h2>Very Positive</h2>
+        <p>Total Reviews</p>
+    </div>
+
+    <div class="review">
+        <div class="count-circle">{{ sentiment_counts['Positive'] }}</div>
+        <h2>Positive</h2>
+        <p>Total Reviews</p>
+    </div>
+
+    <div class="review">
+        <div class="count-circle">{{ sentiment_counts['Neutral'] }}</div>
+        <h2>Neutral</h2>
+        <p>Total Reviews</p>
+    </div>
+
+    <div class="review">
+        <div class="count-circle">{{ sentiment_counts['Negative'] }}</div>
+        <h2>Negative</h2>
+        <p>Total Reviews</p>
+    </div>
+
+    <div class="review">
+        <div class="count-circle">{{ sentiment_counts['Very Negative'] }}</div>
+        <h2>Very Negative</h2>
+        <p>Total Reviews</p>
+    </div>
+
+    <script>
+        
+        window.addEventListener("load", function () {
+            document.getElementById("loader").style.display = "none";
+        });
+    </script>
+</body>
+</html>
