@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+       
+        body, h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+      
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+   
+        .loader {
+            display: block;
+            margin: 20px auto;
+            border: 5px solid #ccc;
+            border-top: 5px solid #333;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+       
+        .review {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        .review h2 {
+            color: #333;
+        }
+
+       
+        .review p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .no-review {
+            color: #999;
+            font-style: italic;
+        }
+
+      
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <title>Sentimental Reviews</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentimental Reviews</h1>
+        
+       
+        <div id="loader" class="loader"></div>
+
+       
+        <div class="review">
+            <h2>Very Positive</h2>
+            {% if categorized_reviews['Very Positive'] %}
+            <p>Steam ID: {{ categorized_reviews['Very Positive'][0] }}</p>
+            <p>Review Text: {{ categorized_reviews['Very Positive'][1] }}</p>
+            <p>Number of Likes: {{ categorized_reviews['Very Positive'][2] }}</p>
+            {% else %}
+            <p class="no-review">No very positive reviews found.</p>
+            {% endif %}
+        </div>
+
+        <div class="review">
+            <h2>Positive</h2>
+            {% if categorized_reviews['Positive'] %}
+            <p>Steam ID: {{ categorized_reviews['Positive'][0] }}</p>
+            <p>Review Text: {{ categorized_reviews['Positive'][1] }}</p>
+            <p>Number of Likes: {{ categorized_reviews['Positive'][2] }}</p>
+            {% else %}
+            <p class="no-review">No positive reviews found.</p>
+            {% endif %}
+        </div>
+
+        <div class="review">
+            <h2>Neutral</h2>
+            {% if categorized_reviews['Neutral'] %}
+            <p>Steam ID: {{ categorized_reviews['Neutral'][0] }}</p>
+            <p>Review Text: {{ categorized_reviews['Neutral'][1] }}</p>
+            <p>Number of Likes: {{ categorized_reviews['Neutral'][2] }}</p>
+            {% else %}
+            <p class="no-review">No neutral reviews found.</p>
+            {% endif %}
+        </div>
+
+        <div class="review">
+            <h2>Negative</h2>
+            {% if categorized_reviews['Negative'] %}
+            <p>Steam ID: {{ categorized_reviews['Negative'][0] }}</p>
+            <p>Review Text: {{ categorized_reviews['Negative'][1] }}</p>
+            <p>Number of Likes: {{ categorized_reviews['Negative'][2] }}</p>
+            {% else %}
+            <p class="no-review">No negative reviews found.</p>
+            {% endif %}
+        </div>
+
+        <div class="review">
+            <h2>Very Negative</h2>
+            {% if categorized_reviews['Very Negative'] %}
+            <p>Steam ID: {{ categorized_reviews['Very Negative'][0] }}</p>
+            <p>Review Text: {{ categorized_reviews['Very Negative'][1] }}</p>
+            <p>Number of Likes: {{ categorized_reviews['Very Negative'][2] }}</p>
+            {% else %}
+            <p class="no-review">No very negative reviews found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        
+        window.addEventListener("load", function () {
+            document.getElementById("loader").style.display = "none";
+        });
+    </script>
+</body>
+</html>
